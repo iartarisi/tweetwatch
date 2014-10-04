@@ -1,8 +1,8 @@
-tweetstream
+tweetwatch
 ===========
 
-Tweetstream allows you to watch a list of Twitter topics in real time
-and display the N number of most retweeted tweets in the last N minutes.
+Tweetwatch allows you to watch a list of Twitter topics in real time
+And Display the N number of most retweeted tweets in the last N minutes.
 
 Installation
 ------------
@@ -24,4 +24,4 @@ $ bundle exec ruby database.rb setup
 
 You can also drop all the tables using `teardown` instead of `setup`.
 
-You will need to edit the `tweetstream.rb` file and set the list of `TOPICS` you want to watch as well as the Twitter API credentials. 
+You will need to edit the `tweetwatch.rb` file and set the list of `TOPICS` you want to watch as well as the Twitter API credentials. 

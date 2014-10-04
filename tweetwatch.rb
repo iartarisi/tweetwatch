@@ -23,6 +23,7 @@ end
 class Tweet < ActiveRecord::Base
 end
 
+
 TweetStream::Client.new.track(*TOPICS) do |status|
   # only care about original tweets; we will have our own concept of
   # what a retweet means since we are only interested in retweets in a
