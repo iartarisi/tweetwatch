@@ -19,9 +19,15 @@ manually. Use your distribution's package manager.
 Setup the database:
 
 ```bash
-$ bundle exec ruby database.rb setup
+$ bundle exec bin/database setup
 ```
 
 You can also drop all the tables using `teardown` instead of `setup`.
 
 You will need to edit the `tweetwatch.rb` file and set the list of `TOPICS` you want to watch as well as the Twitter API credentials. 
+
+Run the server:
+
+```bash
+$ bundle exec ruby -Ilib bin/tweetwatch
+```
