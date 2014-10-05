@@ -1,0 +1,3 @@
+require 'websockets'
+
+run App

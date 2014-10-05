@@ -26,8 +26,16 @@ You can also drop all the tables using `teardown` instead of `setup`.
 
 You will need to edit the `tweetwatch.rb` file and set the list of `TOPICS` you want to watch as well as the Twitter API credentials. 
 
-Run the server:
+Run the twitter watcher process:
 
 ```bash
 $ bundle exec ruby -Ilib bin/tweetwatch
 ```
+
+Run the web(socket) server:
+
+```bash
+$ puma -Ilib config.rb -p 9292
+```
+
+Point your browser to `http://localhost:9292`.

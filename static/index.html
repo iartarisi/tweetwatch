@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>What's new on Twitter</title> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      var ws = new window.WebSocket("ws://0.0.0.0:9292/");
+      ws.onmessage = function(message) {
+      $("#bestof").html('<li class="list-group-item">' + message.data + '</li>');
+
+      console.log(message.data);
+      }
+    </script>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <ul id="bestof" class="list-group"></ul>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+  </body>
+</html>
