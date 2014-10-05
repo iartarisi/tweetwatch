@@ -9,16 +9,16 @@
   <body>
 
     <script type="text/javascript">
-      var ws = new window.WebSocket("ws://0.0.0.0:9292/");
-      ws.onmessage = function(message) {
-      var data = JSON.parse(message.data);
-      $("#bestof").html();
-      for (var i = 0; i < data.length; i++) {
-         $("#bestof").append(
-             '<li class="list-group-item"><strong>' + (i+1) + '</strong> '
-                          + data[i][1] + '</li>');
-      };
-      console.log(message.data);
+      var es = new window.EventSource("http://localhost:9292/");
+      es.onmessage = function(message) {
+          var data = JSON.parse(message.data);
+          $("#bestof").html();
+          for (var i = 0; i < data.length; i++) {
+             $("#bestof").append(
+                 '<li class="list-group-item"><strong>' + (i+1) + '</strong> '
+                              + data[i][1] + '</li>');
+          };
+          console.log(message.data);
       }
     </script>
 

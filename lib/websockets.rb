@@ -3,21 +3,25 @@ require 'faye/websocket'
 require 'tweetwatch'
 
 App = lambda do |env|
-  if Faye::WebSocket.websocket?(env)
-    ws = Faye::WebSocket.new(env)
+  if Faye::EventSource.eventsource?(env)
+    es = Faye::EventSource.new(env)
 
-    ws.on :open do |event|
-      ts = Tweet.limit(10).map {|t| [t.id, t.text]}
-      ws.send(ts.to_json)
+    es.on :open do |event|
+      es.send('Hi!')
     end
       
-    ws.on :close do |event|
-      p [:close, event.code, event.reason]
-      ws = nil
+    loop = EM.add_periodic_timer(1) do
+      ts = Tweet.limit(10).map {|t| [t.id, t.text]}
+      es.send(ts.to_json)
+    end
+
+    es.on :close do |event|
+      es.cancel_timer(loop)
+      es = nil
     end
 
     # Return async Rack response
-    ws.rack_response
+    es.rack_response
 
   else
     # Normal HTTP request
