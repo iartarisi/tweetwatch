@@ -16,26 +16,34 @@ $ bundle install
 You will also need to install the header files of the sqlite3 library
 manually. Use your distribution's package manager.
 
+Create a `tweetwatch` postgresql database with a `tweetwatch` user and password:
+
+```SQL
+CREATE DATABASE tweetwatch;
+CREATE USER tweetwatch WITH PASSWORD tweetwatch;
+GRANT ALL PRIVILEGES ON DATABASE tweetwatch TO tweetwatch;
+```
+
 Setup the database:
 
 ```bash
-$ bundle exec bin/database setup
+$ rake db_setup
 ```
 
-You can also drop all the tables using `teardown` instead of `setup`.
+You can also drop all the tables using `db_teardown` instead of `db_setup`.
 
 You will need to edit the `tweetwatch.rb` file and set the list of `TOPICS` you want to watch as well as the Twitter API credentials. 
 
 Run the twitter watcher process:
 
 ```bash
-$ bundle exec ruby -Ilib bin/tweetwatch
+$ rake track_tweets
 ```
 
-Run the web(socket) server:
+Run the web server:
 
 ```bash
-$ puma -Ilib config.rb -p 9292
+$ rake server
 ```
 
 Point your browser to `http://localhost:9292`.
