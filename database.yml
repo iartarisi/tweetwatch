@@ -1,3 +1,15 @@
 development:
-  adapter: sqlite3
-  database: database.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: tweetwatch
+  username: tweetwatch
+  password: tweetwatch
+  host: 0.0.0.0
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: tweetwatch_test
+  username: tweetwatch
+  password: tweetwatch
+  host: 0.0.0.0
