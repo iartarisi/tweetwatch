@@ -4,10 +4,10 @@ require 'schema'
 require_relative 'spec_helper'
 
 describe '#handle_tweets' do
-  before{ Schema.migrate(:setup) }
+  before { Schema.migrate(:setup) }
   after { Schema.migrate(:teardown) }
   let (:status) { instance_double("Twitter::Tweet", text:"Twitter is awesome!",
-      id: 123, created_at: Time.now.utc, retweeted_status?: false) }
+      id: 123, created_at: Time.now, retweeted_status?: false) }
 
   it 'creates a tweet when it receives a new status' do
     handle_tweets status
