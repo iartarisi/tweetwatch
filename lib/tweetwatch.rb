@@ -17,7 +17,7 @@ def handle_tweets(status)
   # specific time interval
   original = status.retweeted_status? ? status.retweeted_status : status
 
-  Tweet.create(id: original.id, text: original.text,
+  Tweet.create(tweet_id: original.id, text: original.text,
     created_at: original.created_at)
 
   puts "#{status.text}"

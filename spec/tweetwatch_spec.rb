@@ -13,7 +13,7 @@ describe '#handle_tweets' do
     handle_tweets status
 
     tweet = Tweet.first
-    expect(tweet.id).to eq status.id
+    expect(tweet.tweet_id).to eq status.id
     expect(tweet.text).to eq status.text
     expect(tweet.created_at).to be_within(0.000001).of status.created_at
   end
@@ -27,7 +27,7 @@ describe '#handle_tweets' do
 
     expect(Tweet.count).to eq 1
     tweet = Tweet.first
-    expect(tweet.id).to eq status.id
+    expect(tweet.tweet_id).to eq status.id
     expect(tweet.text).to eq status.text
     expect(tweet.created_at).to be_within(0.000001).of status.created_at
   end
