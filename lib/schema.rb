@@ -7,13 +7,11 @@ class Schema < ActiveRecord::Migration
   def setup
     create_table :tweets, id: false do |t|
       # we'll use the id to store the actual tweet ID
-      t.integer :id
+      t.integer :id, null: false
       t.string :text
       t.datetime :created_at
       t.index :created_at
     end
-
-    execute %Q{ ALTER TABLE "tweets" ADD PRIMARY KEY ("id") }
   end
 
   def teardown
