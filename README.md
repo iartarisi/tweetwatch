@@ -47,3 +47,20 @@ $ rake server
 ```
 
 Point your browser to `http://localhost:9292`.
+
+
+Tests
+-----
+
+First create a test database (these are the default values which can be changed ffrom `database.yml`):
+
+```SQL
+CREATE DATABASE tweetwatch_test;
+GRANT ALL PRIVILEGES ON DATABASE tweetwatch_test TO tweetwatch;
+```
+
+Run the tests:
+
+```bash
+$ bundle exec rspec
+```
