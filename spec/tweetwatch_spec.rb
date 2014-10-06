@@ -1,7 +1,7 @@
 require 'tweetwatch'
 require 'schema'
 
-ActiveRecord::Base.establish_connection :development
+ActiveRecord::Base.establish_connection :test
 
 describe '#handle_tweets' do
   before{ Schema.migrate(:setup) }

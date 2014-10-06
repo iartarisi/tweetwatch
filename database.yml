@@ -6,7 +6,7 @@ development:
   password: tweetwatch
   host: 0.0.0.0
 
-development:
+test:
   adapter: postgresql
   encoding: unicode
   database: tweetwatch_test
