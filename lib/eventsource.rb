@@ -6,12 +6,8 @@ App = lambda do |env|
   if Faye::EventSource.eventsource?(env)
     es = Faye::EventSource.new(env)
 
-    es.on :open do |event|
-      es.send('Hi!')
-    end
-      
     loop = EM.add_periodic_timer(1) do
-      ts = Tweet.limit(10).map {|t| [t.id, t.text]}
+      ts = Tweet.order(created_at: :desc).limit(10).map {|t| [t.id, t.text]}
       es.send(ts.to_json)
     end
 

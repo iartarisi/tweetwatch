@@ -1,3 +1,3 @@
-require 'websockets'
+require 'eventsource'
 
 run App
