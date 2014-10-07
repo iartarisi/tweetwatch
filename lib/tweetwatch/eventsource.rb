@@ -5,13 +5,14 @@ require 'tweetwatch/schema'
 
 LAST_N = 10
 LAST_X_MINUTES = 10
+REFRESH = 1
 
 
 App = lambda do |env|
   if Faye::EventSource.eventsource?(env)
     es = Faye::EventSource.new(env)
 
-    loop = EM.add_periodic_timer(1) do
+    loop = EM.add_periodic_timer(REFRESH) do
       es.send(bestof.to_json)
     end
 
