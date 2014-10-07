@@ -25,6 +25,8 @@ describe '#bestof' do
     Tweet.create(tweet_id: 5, text: 'foo', created_at: Time.now.utc)
 
     # ignores retweets that are too old
+    Tweet.create(tweet_id: 4, text: 'baz',
+      created_at: Time.now.utc - LAST_X_MINUTES * 60 - 1)
     Tweet.create(tweet_id: 6, text: 'old',
       created_at: Time.now.utc - LAST_X_MINUTES * 60 - 1)
     Tweet.create(tweet_id: 6, text: 'old',
