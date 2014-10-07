@@ -13,8 +13,8 @@ Install the requirements with bundle:
 $ bundle install
 ```
 
-You will also need to install the header files of the sqlite3 library
-manually. Use your distribution's package manager.
+You might need to install the header files for postgresql manually. Use
+your distribution's package manager.
 
 Create a `tweetwatch` postgresql database with a `tweetwatch` user and password:
 
