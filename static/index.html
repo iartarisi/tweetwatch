@@ -15,8 +15,11 @@
           $("#bestof").empty();
           for (var i = 0; i < data.length; i++) {
              $("#bestof").append(
-                 '<li class="list-group-item"><strong>' + (i+1) + '</strong> '
-                              + data[i][1] + '</li>');
+                 '<tr class="bestrows">'+
+                   '<td>' + (i+1) + '</td>'+
+                   '<td>' + data[i]['text'] + '</td>'+
+                   '<td>' + data[i]['retweeted'] +'</td>'+
+                 '</tr>');
           };
           console.log(message.data);
       }
@@ -25,7 +28,16 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <ul id="bestof" class="list-group"></ul>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Message</th>
+                <th>Retweets</th>
+              </tr>
+            </thead>
+            <tbody id="bestof"></tbody>
+          </table>
         </div>
         <div class="col-md-2"></div>
       </div>
