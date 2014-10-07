@@ -1,7 +1,7 @@
 require 'faye/websocket'
 
-require 'schema'
 require 'tweetwatch'
+require 'tweetwatch/schema'
 
 LAST_N = 10
 LAST_X_MINUTES = 10

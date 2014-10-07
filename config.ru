@@ -1,3 +1,3 @@
-require 'eventsource'
+require 'tweetwatch/eventsource'
 
 run App

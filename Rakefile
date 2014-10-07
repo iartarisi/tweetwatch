@@ -1,5 +1,5 @@
 task :_database do
-  require_relative 'lib/schema'
+  require_relative 'lib/tweetwatch/schema'
   require 'active_record'
 
   ActiveRecord::Base.establish_connection :development

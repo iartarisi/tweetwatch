@@ -1,5 +1,5 @@
-require 'eventsource'
-require 'schema'
+require 'tweetwatch/eventsource'
+require 'tweetwatch/schema'
 
 require_relative 'spec_helper'
 

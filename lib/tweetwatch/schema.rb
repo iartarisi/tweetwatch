@@ -17,3 +17,6 @@ class Schema < ActiveRecord::Migration
     drop_table :tweets
   end
 end
+
+class Tweet < ActiveRecord::Base
+end

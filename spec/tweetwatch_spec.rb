@@ -1,5 +1,5 @@
 require 'tweetwatch'
-require 'schema'
+require 'tweetwatch/schema'
 
 require_relative 'spec_helper'
 

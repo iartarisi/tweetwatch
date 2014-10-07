@@ -2,14 +2,13 @@ require 'logger'
 
 require 'active_record'
 
+require 'tweetwatch/schema'
+
 
 ActiveRecord::Base.logger = Logger.new('debug.log')
 ActiveRecord::Base.configurations = YAML::load(IO.read('database.yml'))
 ActiveRecord::Base.establish_connection :development
 
-
-class Tweet < ActiveRecord::Base
-end
 
 def handle_tweets(status)
   # only care about original tweets; we will have our own concept of
