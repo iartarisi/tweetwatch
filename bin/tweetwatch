@@ -15,12 +15,19 @@ end
 
 puts 'Starting server...'
 
-@client = TweetStream::Client.new
-
-@client.on_limit do |skip_count|
+client = TweetStream::Client.new
+client.on_limit do |skip_count|
   puts "Received a rate limiting message. #{skip_count}"
 end
 
-@client.track(*TOPICS) do |status|
+client.on_enhance_your_calm do
+  puts "Got 420 enhance your calm messsage."
+end
+
+client.on_error do |message|
+  puts "Error: #{message}"
+end
+
+client.track(*TOPICS) do |status|
   handle_tweets(status)
 end
