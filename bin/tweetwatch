@@ -3,7 +3,7 @@
 require 'tweetstream'
 require 'tweetwatch'
 
-TOPICS = ['Champions League', 'awesome']
+TOPICS = ['Champions League']
 
 TweetStream.configure do |config|
   config.consumer_key       = 'www'
@@ -13,7 +13,7 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-puts 'Starting server...'
+puts "Starting server... Watching #{TOPICS.join(", ")}."
 
 client = TweetStream::Client.new
 client.on_limit do |skip_count|
