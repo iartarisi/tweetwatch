@@ -64,3 +64,12 @@ Run the tests:
 ```bash
 $ bundle exec rspec
 ```
+
+Design
+------
+
+Tweetwatch uses two separate services: one for watching twitter and gathering all the tweets that match the watched topic and another one which then displays these.
+
+The trackers uses Twitter's TweetStream API to record tweets in real-time. It stores them with minimal processing in the database.
+
+The web server uses EventSource to send events to the browser periodically (the interval can be configured with a ruby constant). Queries are very simple since they involve no joins, but only an interval check on a limited number of entries.
