@@ -6,10 +6,10 @@ require 'tweetwatch'
 TOPICS = ['Champions League', 'awesome']
 
 TweetStream.configure do |config|
-  config.consumer_key       = 'vCyMfQjUygYu1Ne85bXTle5YE'
-  config.consumer_secret    = 'XWN4qtayn3uLpUzZX2ArraamjyIVphCgvcgoAg2wKlNTYUxb4Y'
-  config.oauth_token        = '14068795-pSsdjkv1iEThEAxNSu66zgtFspTidGZ1gKbKDAo8I'
-  config.oauth_token_secret = 'RfDW3h3sRHLskUrWCc9mfFyeQs9VwaA7Naa1ij1Pwohxi'
+  config.consumer_key       = 'www'
+  config.consumer_secret    = 'xxx'
+  config.oauth_token        = 'yyy'
+  config.oauth_token_secret = 'zzz'
   config.auth_method        = :oauth
 end
 
