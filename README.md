@@ -27,7 +27,7 @@ GRANT ALL PRIVILEGES ON DATABASE tweetwatch TO tweetwatch;
 Setup the database:
 
 ```bash
-$ rake db_setup
+$ bundle exec rake db_setup
 ```
 
 You can also drop all the tables using `db_teardown` instead of `db_setup`.

@@ -18,5 +18,5 @@ task :track_tweets do
 end
 
 task :server do
-  sh %{puma -Ilib config.ru -p 9292}
+  sh %{bundle exec puma -Ilib config.ru -p 9292}
 end
