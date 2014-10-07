@@ -40,5 +40,5 @@ def bestof
     ORDER BY retweeted DESC
     LIMIT #{LAST_N}
 SQL
-  tweets.map { |t| { id: t.tweet_id, text: t.text, retweeted: t.retweeted } }
+  tweets.map { |t| { id: t.tweet_id, text: t.text, retweeted: t.retweeted - 1} }
 end

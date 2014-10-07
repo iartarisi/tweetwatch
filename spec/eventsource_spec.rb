@@ -38,16 +38,16 @@ describe '#bestof' do
 
     expect(subject.length).to eq(LAST_N)
     is_expected.to eq [
-      {id: 3, text: 'bar', retweeted: 3},
-      {id: 1, text: 'foo', retweeted: 2},
-      {id: 2, text: 'qux', retweeted: 1},
-      {id: 4, text: 'baz', retweeted: 1},
-      {id: 5, text: 'foo', retweeted: 1},
-      {id: 7, text: 'baz', retweeted: 1},
-      {id: 8, text: 'baz', retweeted: 1},
-      {id: 9, text: 'baz', retweeted: 1},
-      {id: 10, text: 'baz', retweeted: 1},
-      {id: 11, text: 'baz', retweeted: 1}
+      {id: 3, text: 'bar', retweeted: 2},
+      {id: 1, text: 'foo', retweeted: 1},
+      {id: 2, text: 'qux', retweeted: 0},
+      {id: 4, text: 'baz', retweeted: 0},
+      {id: 5, text: 'foo', retweeted: 0},
+      {id: 7, text: 'baz', retweeted: 0},
+      {id: 8, text: 'baz', retweeted: 0},
+      {id: 9, text: 'baz', retweeted: 0},
+      {id: 10, text: 'baz', retweeted: 0},
+      {id: 11, text: 'baz', retweeted: 0}
     ]
   end
 end
